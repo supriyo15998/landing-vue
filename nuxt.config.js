@@ -62,6 +62,26 @@ export default {
     }
   },
 
+  auth: {
+    redirect: {
+      login: "/auth/login",
+      logout: "/auth/login",
+      home: "/dashboard"
+    },
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: "/auth/login/", method: "post" },
+          logout: { url: "/auth/logout/", method: "post" },
+          user: { url: "/auth/user/", method: "get" }
+        },
+        user: {
+          property: false,
+        },
+      }
+    },
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
