@@ -105,7 +105,12 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'Inspire',
           to: '/inspire'
-        }
+        },
+        {
+          icon: 'mdi-about',
+          title: 'About',
+          to: '/about'
+        },
       ],
       miniVariant: false,
       right: true,
