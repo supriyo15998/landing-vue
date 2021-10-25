@@ -15,20 +15,23 @@
             v-for="contributor in contributors"
             :key="contributor.id"
           >
-            <v-card
-              outlined
-              @click.prevent="getContributorGithubProfile(contributor.githubId)"
-            >
+            <v-card outlined @click.prevent="getContributorGithubProfile()">
               <v-card-title>
                 <v-icon large>mdi-account-circle</v-icon>
                 {{ contributor.firstName }}
               </v-card-title>
             </v-card>
-          </v-col>
-        </v-row>
-        <v-row v-if="resultFetch">
-          <v-col cols="12">
-            <v-card> <v-card-title>test</v-card-title> </v-card>
+            <v-row v-if="resultFetch" class="mt-2">
+              <v-col>
+                <v-card outlined>
+                  <v-card-title>
+                    <a :href="contributor.githubProfileUrl" target="_blank">
+                      Github Profile
+                    </a>
+                  </v-card-title>
+                </v-card>
+              </v-col>
+            </v-row>
           </v-col>
         </v-row>
       </v-card>
@@ -36,9 +39,6 @@
   </div>
 </template>
 <script>
-import * as axios from "axios";
-
-const API = "https://api.github.com/users/";
 export default {
   data() {
     return {
@@ -49,38 +49,33 @@ export default {
           id: 1,
           firstName: "Supriyo",
           lastName: "Das",
-          githubId: "supriyo15998"
+          githubProfileUrl: "https://github.com/supriyo15998"
         },
         {
           id: 2,
           firstName: "Faraz",
           lastName: "Ali",
-          githubId: "farazappy"
+          githubProfileUrl: "https://github.com/farazappy"
         },
         {
           id: 3,
           firstName: "Anikesh",
           lastName: "Sinha",
-          githubId: "AnikS0498"
+          githubProfileUrl: "https://github.com/AnikS0498"
         },
         {
           id: 4,
           firstName: "Sameema",
           lastName: "Nasrin",
-          githubId: "SameemaNasrin"
+          githubProfileUrl: "https://github.com/SameemaNasrin"
         }
       ]
     };
   },
 
   methods: {
-    async getContributorGithubProfile(githubId) {
-      let response = await axios.get(API + githubId);
-      if (response.status == 200) {
-        console.log(response.data);
-        console.log(this.githubId);
-        this.resultFetch = true;
-      }
+    getContributorGithubProfile() {
+      this.resultFetch = !this.resultFetch;
     }
   }
 };
