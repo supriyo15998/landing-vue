@@ -1,5 +1,5 @@
 # landing-vue
-
+# this project is created using vue
 ## Build Setup
 
 ```bash
