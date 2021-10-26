@@ -62,6 +62,10 @@ export default {
     }
   },
 
+  axios: {
+    baseURL: "https://jsonplaceholder.typicode.com/"
+  },
+
   auth: {
     redirect: {
       login: "/auth/login",
