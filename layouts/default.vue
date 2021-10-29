@@ -86,6 +86,11 @@ export default {
           icon: "mdi-information-outline",
           title: "About",
           to: "/about"
+        },
+        {
+          icon: "mdi-account-arrow-right",
+          title: "Login",
+          to: "/login"
         }
       ],
       miniVariant: false,
