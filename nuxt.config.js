@@ -62,6 +62,10 @@ export default {
     }
   },
 
+  axios: {
+    baseURL: "https://jsonplaceholder.typicode.com/"
+  },
+
   auth: {
     redirect: {
       login: "/auth/login",
@@ -82,6 +86,10 @@ export default {
     },
   },
 
+  router: {
+    middleware: ['auth']
+  },
+  
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
