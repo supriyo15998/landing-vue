@@ -1,5 +1,8 @@
 # landing-vue
 # this project is created using vue
+
+##Hosting
+#Netlify is the best platform for hosting veu websitee, you can host your website in less than 5 minutes through GitHub.
 ## Build Setup
 
 ```bash
